@@ -8,7 +8,7 @@ function pigLatin(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   let isVowel = 0;
 
-  if ( vowels.includes( word[isVowel] ) ) {
+  if ( vowels.includes( word[0] ) ) {
     return word + 'way';
   } else {
     for ( let consonant of word ) {

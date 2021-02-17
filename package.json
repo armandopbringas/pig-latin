@@ -1,0 +1,25 @@
+{
+  "name": "pig-latin",
+  "version": "1.0.0",
+  "description": "pig latin algorithm",
+  "main": "pig-latin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armandopbringas/pig-latin.git"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "armandopbringas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/armandopbringas/pig-latin/issues"
+  },
+  "homepage": "https://github.com/armandopbringas/pig-latin#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
