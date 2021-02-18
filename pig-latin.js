@@ -10,19 +10,28 @@ function pigLatin(word) {
 
   const [firstLetter] = word;
   const firstLetterIsVowel = vowels.some(vowel => vowel === firstLetter);
-  console.log(firstLetterIsVowel);
-
-  // Code what add 'way' at word ends
-  if(firstLetterIsVowel) {
-    return word + 'way';
-  }
+  // console.log(firstLetterIsVowel);
 
   const lettersArray = [...word];
+  // console.log(lettersArray)
+
+  // This constant searchs the index position of the first vowel in the word
   const firstVowelIndex = lettersArray.findIndex(letter => vowels.includes(letter));
+  // console.log(firstVowelIndex)
+ 
   const frstPart = lettersArray.slice(1);
+  // console.log(frstPart)
+
+  // Code what add 'way' at word ends if the word starts with vocal 
+  // or add 'ay' if the word strts with consonants
+  if(firstLetterIsVowel) {
+    return word + 'way';
+  } else {
+    return word +'ay';
+  }
 
 }
 
 // pigLatin('angular');
 
-console.log(pigLatin('angular'));
+console.log(pigLatin('javascript'));
