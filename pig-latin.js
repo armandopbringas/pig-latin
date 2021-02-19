@@ -9,16 +9,12 @@ function pigLatin(word) {
 
   // Step one: want to know if the first word letter is vowel
   const [firstLetter] = word;
-  console.log([firstLetter]);
   const firstLetterIsVowel = vowels.some(vowel => vowel === firstLetter);
-  console.log(firstLetterIsVowel);
   module.exports = firstLetterIsVowel;
   
   // Step two: the word starts with one or more consonants
   const wordLetters = [...word];
-  console.log(wordLetters);
   const firstLettersAreConsonants = wordLetters.some(letter => letter === vowels);
-  console.log(firstLettersAreConsonants);
   module.exports = firstLettersAreConsonants;
   
   // Step three: want to know with how many consonants word starts
