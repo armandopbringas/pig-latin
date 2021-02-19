@@ -10,28 +10,20 @@ function pigLatin(word) {
 
   const [firstLetter] = word;
   const firstLetterIsVowel = vowels.some(vowel => vowel === firstLetter);
-  // console.log(firstLetterIsVowel);
+  module.exports = firstLetterIsVowel;
 
   const lettersArray = [...word];
-  // console.log(lettersArray)
 
   // This constant searchs the index position of the first vowel in the word
   const firstVowelIndex = lettersArray.findIndex(letter => vowels.includes(letter));
-  // console.log(firstVowelIndex)
  
-  const frstPart = lettersArray.slice(1);
-  // console.log(frstPart)
+  // Here should be the code what slice the letters
 
   // Code what add 'way' at word ends if the word starts with vocal 
-  // or add 'ay' if the word strts with consonants
-  if(firstLetterIsVowel) {
-    return word + 'way';
-  } else {
-    return word +'ay';
-  }
+  // or add 'ay' if the word starts with consonants
+  
+  return firstLetterIsVowel ? word + 'way' : word + 'ay';
 
 }
 
-// pigLatin('angular');
-
-console.log(pigLatin('javascript'));
+console.log(pigLatin('place'));

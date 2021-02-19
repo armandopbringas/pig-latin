@@ -1,13 +1,10 @@
-const pigLatin = require('../pig-latin.js');
+// const pigLatin = require('../pig-latin.js');
+const firstLetterIsVowel = require('../pig-latin');
 
-describe('', () => {
+test('the first word letter is vowel', () => {
+  expect(firstLetterIsVowel).toBe(true);
+});
 
-  test('words wich start with vowel', () => {
-    expect();
-  });
-
-  test('words wich start with consonant', () => {
-    expect();
-  });
-  
+test('the first word letter is consonant', () => {
+  expect(firstLetterIsVowel).toBe(false);
 });
