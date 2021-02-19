@@ -5,25 +5,28 @@
 //   antes de la primera vocal al final de la palabra y se añade 'ay'
 
 function pigLatin(word) {
-
   const vowels = ['a', 'e', 'i', 'o', 'u'];
 
+  // Step one: want to know if the first word letter is vowel
   const [firstLetter] = word;
+  console.log([firstLetter]);
   const firstLetterIsVowel = vowels.some(vowel => vowel === firstLetter);
+  console.log(firstLetterIsVowel);
   module.exports = firstLetterIsVowel;
-
-  const lettersArray = [...word];
-
-  // This constant searchs the index position of the first vowel in the word
-  const firstVowelIndex = lettersArray.findIndex(letter => vowels.includes(letter));
- 
-  // Here should be the code what slice the letters
-
-  // Code what add 'way' at word ends if the word starts with vocal 
-  // or add 'ay' if the word starts with consonants
   
-  return firstLetterIsVowel ? word + 'way' : word + 'ay';
+  // Step two: the word starts with one or more consonants
+  const wordLetters = [...word];
+  console.log(wordLetters);
+  const firstLettersAreConsonants = wordLetters.some(letter => letter === vowels);
+  console.log(firstLettersAreConsonants);
+  module.exports = firstLettersAreConsonants;
+  
+  // Step three: want to know with how many consonants word starts
 
+  // return word + 'way'
+  // return word + 'ay'
 }
 
-console.log(pigLatin('place'));
+// pigLatin('place'); 
+
+console.log(pigLatin('angular'));
