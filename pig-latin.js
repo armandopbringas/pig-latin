@@ -6,7 +6,6 @@
 
 function pigLatin(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-
   // Step one: want to know if the first word letter is vowel
   const [firstLetter] = word;
   const firstLetterIsVowel = vowels.some(vowel => vowel === firstLetter);
@@ -14,15 +13,11 @@ function pigLatin(word) {
   
   // Step two: the word starts with one or more consonants
   const wordLetters = [...word];
-  const firstLettersAreConsonants = wordLetters.some(letter => letter === vowels);
-  module.exports = firstLettersAreConsonants;
-  
-  // Step three: want to know with how many consonants word starts
+  const consonantLetters = wordLetters.filter(wordLetter => !vowels.includes(wordLetter));
+  module.export = consonantLetters;
 
-  // return word + 'way'
-  // return word + 'ay'
+  // Step three: move consonant(s) at word ends
+  return firstLetterIsVowel ? word + 'way' : word + 'ay';
 }
 
-// pigLatin('place'); 
-
-console.log(pigLatin('angular'));
+pigLatin('angular')
