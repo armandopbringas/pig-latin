@@ -1,6 +1,5 @@
 const { getConsonants, firstLetterIsVowel, pigLatin } = require('../pig-latin');
-
-const words = [ {word: "arquimides", assert: "yofo" }, "citlaltepetl", "tikua", "amlo", "hala madrid", "hola"];7
+const words = [ {word: "arquimides", assert: "yofo" }, "citlaltepetl", "tikua", "amlo", "hala madrid", "hola"];
 
 
  
