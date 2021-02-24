@@ -3,6 +3,7 @@
 // - para palabras que comienzan con una vocal, se añade 'way' al final
 // - para palabras que comienzan con consonante, se mueven todas las consonantes 
 //   antes de la primera vocal al final de la palabra y se añade 'ay'
+
 const { vowels: VOWELS } = require("./constants");
 
 const firstLetterIsVowel = word => {
@@ -24,17 +25,16 @@ const getConsonants = word => {
     consonantsCount
   };
 } 
-module.exports = getConsonants;
+
+// module.exports = getConsonants;
 
 function pigLatin(word) {
-  // Step one: want to know if the first word letter is vowel
-
+//   Step one: want to know if the first word letter is vowel
   
-  // Step two: the word starts with one or more consonants
+//   Step two: the word starts with one or more consonants
 
-
-  // Step three: move consonant(s) at word ends
-  // return firstLetterIsVowel ? word + 'way' : word + 'ay';
+//   Step three: move consonant(s) at word ends
+//   return firstLetterIsVowel ? word + 'way' : word + 'ay';
 }
 
-module.exports.pigLatin = pigLatin;
+// module.exports.pigLatin = pigLatin;

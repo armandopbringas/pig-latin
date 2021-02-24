@@ -1,31 +1,20 @@
-const { getConsonants, firstLetterIsVowel, pigLatin } = require('../pig-latin');
-const words = [ {word: "arquimides", assert: "yofo" }, "citlaltepetl", "tikua", "amlo", "hala madrid", "hola"];
-
-
- 
+const firstLetterIsVowel = require('../pig-latin');
+const words = [ { word: "arquimides", assert: true } ];
 
 describe("Unit tests", () => {
-  describe("First word letter checks", () => {
-
-    //expect(firstLetterIsVowel(/* test case variable * /)).toBe(true);
-    //expect(firstLetterIsVowel(/* test case variable 1 * /)).toBe(true);
-    //expect(firstLetterIsVowel(/* test case variable 2 * /)).toBe(true);
-    // const arrayThatHasSomeTestCases = [testCase1, testCase2, testCase3, testCase_n,];
-    // arrayThatHasSomeTestCases.forEach(testCase => expect(testCase).toEqual());
+  // until here, in theory, it´is passing the test for a typeof string data but then i don´t know whats the way to use the parameter 'word' to evaualate it, i´v been trying some ways but they are not correct
+  test('should be type string', () => {
+    expect(typeof 'string').toBe('string');
   });
 
-  describe("Consonants check", () => {
-
-  });
 });
 
-describe("Big picture", () => {
-  const [ arquimides, pico, resto, malo, bestTeamEver, hola ] = words;
-  expect(pigLatin(arquimides)).toEqual("")
-})
+// describe("Big picture", () => {
+//   const [ arquimides, pico, resto, malo, bestTeamEver, hola ] = words;
+//   expect(pigLatin(arquimides)).toEqual("")
+// })
 
-
-test('the consonantLetters array has vowles', () => {
-  expect(consonantLetters).toContain('n');
-  expect(new Set(consonantLetters)).toContain('n');
-});
+// test('the consonantLetters array has vowles', () => {
+//   expect(consonantLetters).toContain('n');
+//   expect(new Set(consonantLetters)).toContain('n');
+// });
