@@ -8,17 +8,15 @@ const { vowels: VOWELS } = require('./constants');
 
 const firstLetterIsVowel = word => {
   if (!word || typeof word !== 'string') throw new Error('Only strings allowed');
-  const [ firstLetter ] = word;
+  const [firstLetter] = word;
   return VOWELS.some(vowel => vowel === firstLetter);
 }
-
-module.exports = firstLetterIsVowel;
 
 const getConsonants = word => {
   const wordLetters = [...word];
   const consonants = wordLetters.filter(wordLetter => !VOWELS.includes(wordLetter));
   const hasConsonants = consonants.length > 0;
-  const consonantsCount = consonants.length
+  const consonantsCount = consonants.length;
   return {
     consonants,
     hasConsonants,
@@ -26,15 +24,15 @@ const getConsonants = word => {
   };
 } 
 
-module.exports = getConsonants;
-
 function pigLatin(word) {
 //   Step one: want to know if the first word letter is vowel
-  
 //   Step two: the word starts with one or more consonants
-
 //   Step three: move consonant(s) at word ends
 //   return firstLetterIsVowel ? word + 'way' : word + 'ay';
 }
 
-module.exports.pigLatin = pigLatin;
+module.exports = {
+  firstLetterIsVowel,
+  getConsonants,
+  pigLatin
+}
