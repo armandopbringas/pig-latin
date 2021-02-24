@@ -8,6 +8,8 @@ describe('Unit tests', () => {
     // why this method exists (as part of the overall solution)
     // and a BRIEF on what's it's general behavior to come to a solution
   })
+  
+  it('Should be called with a word as string', () => {
     expect(() => firstLetterIsVowel()).toThrow(Error);
   });
 
