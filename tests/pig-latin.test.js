@@ -13,4 +13,11 @@ describe('Unit tests', () => {
     expect(() => firstLetterIsVowel()).toThrow(Error);
   });
 
+  // Should validate vowel starting words as `true`
+
+  // Should validate non vowel starting words as `false`
+
+  // Include a test for cases like the string "   apple as parameter"
+  // This test may take you to a bit of change in the implementation
+
 });
