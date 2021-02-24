@@ -8,13 +8,3 @@ describe('Unit tests', () => {
   });
 
 });
-
-// describe("Big picture", () => {
-//   const [ arquimides, pico, resto, malo, bestTeamEver, hola ] = words;
-//   expect(pigLatin(arquimides)).toEqual("")
-// })
-
-// test('the consonantLetters array has vowles', () => {
-//   expect(consonantLetters).toContain('n');
-//   expect(new Set(consonantLetters)).toContain('n');
-// });
