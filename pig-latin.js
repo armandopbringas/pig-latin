@@ -5,11 +5,16 @@
 //   antes de la primera vocal al final de la palabra y se añade 'ay'
 
 const { vowels: VOWELS } = require('./constants');
-const firstLetterIsVowel = word => {
+
+const normalize = word => {
   if (!word || typeof word !== 'string') throw new Error('Only strings allowed');
+  const wordTransformerLowerCase = word.toLocaleLowerCase();
+  const deletSpacesAtWord = word.trim();
+}
+
+const firstLetterIsVowel = word => {
   const [firstLetter] = word;
-  const letter = VOWELS.some(vowel => vowel === firstLetter);
-  return letter;
+  VOWELS.some(vowel => vowel === firstLetter);
 }
 
 const getConsonants = word => {
@@ -24,11 +29,10 @@ const getConsonants = word => {
   };
 } 
 
-function pigLatin(word) {
-
-}
+function pigLatin(word) {};
 
 module.exports = {
+  normalize,
   firstLetterIsVowel,
   getConsonants,
   pigLatin
