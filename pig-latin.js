@@ -8,13 +8,12 @@ const { vowels: VOWELS } = require('./constants');
 
 const normalize = word => {
   if (!word || typeof word !== 'string') throw new Error('Only strings allowed');
-  const wordTransformerLowerCase = word.toLocaleLowerCase();
-  const deletSpacesAtWord = word.trim();
+  return word.toLocaleLowerCase().trim();
 }
 
 const firstLetterIsVowel = word => {
   const [firstLetter] = word;
-  VOWELS.some(vowel => vowel === firstLetter);
+  return VOWELS.some(vowel => vowel === firstLetter);
 }
 
 const getConsonants = word => {
