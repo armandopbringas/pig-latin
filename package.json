@@ -4,7 +4,8 @@
   "description": "pig latin algorithm",
   "main": "pig-latin.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
