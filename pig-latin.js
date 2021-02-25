@@ -5,13 +5,10 @@
 //   antes de la primera vocal al final de la palabra y se añade 'ay'
 
 const { vowels: VOWELS } = require('./constants');
-// const word = 'animal'
 const firstLetterIsVowel = word => {
   if (!word || typeof word !== 'string') throw new Error('Only strings allowed');
   const [firstLetter] = word;
-  // console.log(firstLetter);
   const letter = VOWELS.some(vowel => vowel === firstLetter);
-  // console.log(letter);
   return letter;
 }
 // console.log(firstLetterIsVowel(word));
@@ -28,10 +25,7 @@ const getConsonants = word => {
 } 
 
 function pigLatin(word) {
-//   Step one: want to know if the first word letter is vowel
-//   Step two: the word starts with one or more consonants
-//   Step three: move consonant(s) at word ends
-// return firstLetterIsVowel ? word + 'way' : word + 'ay';
+
 }
 
 module.exports = {

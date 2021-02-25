@@ -1,4 +1,4 @@
-const { TestScheduler } = require('jest');
+
 const vowels = require('../constants');
 const { firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
 
