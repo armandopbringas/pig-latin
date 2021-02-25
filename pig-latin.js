@@ -11,7 +11,7 @@ const firstLetterIsVowel = word => {
   const letter = VOWELS.some(vowel => vowel === firstLetter);
   return letter;
 }
-// console.log(firstLetterIsVowel(word));
+
 const getConsonants = word => {
   const wordLetters = [...word];
   const consonants = wordLetters.filter(wordLetter => !VOWELS.includes(wordLetter));
