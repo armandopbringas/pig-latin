@@ -1,12 +1,12 @@
-const { firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
+const { normalize, firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
 const { vowelStartingWords, nonVowelStartingWords } = require("./utils");
 
 describe('Testing input normalization', () => {
   test('TBD 1', () => {
-    expect().toBeDefined();
+    expect(normalize).toBeDefined();
   });
   test('TBD 2', () => {
-    expect().toBeDefined();
+    expect(normalize).toBeDefined();
   });
 })
 
@@ -16,7 +16,7 @@ describe('Testing firstLetterIsVowel function', () => {
   });
   
   it('Correctly validate vowel starting words', () => {
-    vowelStartingWords.forEach( word => {
+    vowelStartingWords.map(normalize).forEach( word => {
       expect(firstLetterIsVowel(word)).toBeDefined(); 
       expect(firstLetterIsVowel(word)).toStrictEqual(true);
     });
