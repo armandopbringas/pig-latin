@@ -1,9 +1,3 @@
-// Pig Latin algorithm
-
-// - para palabras que comienzan con una vocal, se añade 'way' al final
-// - para palabras que comienzan con consonante, se mueven todas las consonantes 
-//   antes de la primera vocal al final de la palabra y se añade 'ay'
-
 const { vowels: VOWELS } = require('./constants');
 
 const normalize = word => {
@@ -18,15 +12,18 @@ const firstLetterIsVowel = word => {
 
 const getConsonants = word => {
   const wordLetters = [...word];
-  const consonants = wordLetters.filter(wordLetter => !VOWELS.includes(wordLetter));
-  const hasConsonants = consonants.length > 0;
-  const consonantsCount = consonants.length;
+  const [firstConsonantLetter] = wordLetters[0]; 
+  const firstLetterIsConsonant = VOWELS.includes(firstConsonantLetter);
+  const [secondConsonantLetter] = wordLetters[1];
+  const secondLetterIsConsonant = VOWELS.includes(secondConsonantLetter);
   return {
-    consonants,
-    hasConsonants,
-    consonantsCount
+    wordLetters,
+    firstConsonantLetter,
+    firstLetterIsConsonant,
+    secondConsonantLetter,
+    secondLetterIsConsonant,
   };
-} 
+};
 
 function pigLatin(word) {};
 
