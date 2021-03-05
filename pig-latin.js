@@ -1,5 +1,5 @@
 const { vowels: VOWELS } = require('./constants');
-const word = 'buzz';
+
 const normalize = word => {
   if (!word || typeof word !== 'string') throw new Error('Only strings allowed');
   return word.toLocaleLowerCase().trim();

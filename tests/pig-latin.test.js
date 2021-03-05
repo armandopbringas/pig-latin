@@ -53,10 +53,9 @@ describe('Testing firstLetterIsVowel function', () => {
 
 describe('Testing getConsonants function', () => {
   it('Correctly validate non vowel starting words', () => {
-    const normalizedWords = vowelStartingWords.map(normalize);
+    const normalizedWords = nonVowelStartingWords.map(normalize);
     normalizedWords.forEach(word => {
-      expect(getConsonants(word)).toBeDefined();
-      expect(getConsonants(word)).toStrictEqual(false);
+      expect(getConsonants(word)).toStrictEqual(true);
     });
   });
   
