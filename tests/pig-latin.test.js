@@ -34,14 +34,30 @@ describe('Testing firstLetterIsVowel function', () => {
   
   it('Correctly validate vowel starting words', () => {
     const normalizedWords = vowelStartingWords.map(normalize);
-    normalizedWords.forEach( word => {
-      expect(firstLetterIsVowel(word)).toBeDefined(); 
+    normalizedWords.forEach(word => {
+      expect(firstLetterIsVowel(word)).toBeDefined();
+      expect(typeof firstLetterIsVowel(word)).toStrictEqual('boolean'); 
       expect(firstLetterIsVowel(word)).toStrictEqual(true);
     });
   });
   
   it('should not start with vowel', () => {
-    const normalizedWords = vowelStartingWords.map(normalize);
-    expect(firstLetterIsVowel('true')).toBeFalsy();
+    const normalizedWords = nonVowelStartingWords.map(normalize);
+    normalizedWords.forEach(word => {
+      expect(firstLetterIsVowel(word)).toBeDefined();
+      expect(typeof firstLetterIsVowel(word)).toStrictEqual('boolean');
+      expect(firstLetterIsVowel(word)).toStrictEqual(false);
+    });
   });
+});
+
+describe('Testing getConsonants function', () => {
+  it('Correctly validate non vowel starting words', () => {
+    const normalizedWords = vowelStartingWords.map(normalize);
+    normalizedWords.forEach(word => {
+      expect(getConsonants(word)).toBeDefined();
+      expect(getConsonants(word)).toStrictEqual(false);
+    });
+  });
+  
 });
