@@ -56,8 +56,18 @@ describe('Validate word starting with no vowel', () => {
     const normalizedWords = nonVowelStartingWords.map(normalize);
     normalizedWords.forEach(word => {
       const getConsonantsCheck = getConsonants(word);
+      const { 
+        firstLetter,
+        firstLetterIsConsonant,
+        secondLetter,
+        secondLetterIsConsonant,
+      } = getConsonantsCheck;
       expect(getConsonantsCheck).toBeDefined();
       expect(typeof getConsonantsCheck).toStrictEqual('object');
+      expect(firstLetter).toBeDefined();
+      expect(firstLetterIsConsonant).toBeDefined();
+      expect(secondLetter).toBeDefined();
+      expect(secondLetterIsConsonant).toBeDefined();
     });
   });
 });
