@@ -1,4 +1,4 @@
-const { normalize, firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
+const { vowels, normalize, firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
 const { vowelStartingWords, nonVowelStartingWords } = require("./utils");
 
 const MIXED_CASE = "mIXeD_CaSe";
@@ -51,12 +51,13 @@ describe('Testing firstLetterIsVowel function', () => {
   });
 });
 
-describe('Testing getConsonants function', () => {
-  it('Correctly validate non vowel starting words', () => {
+describe('Validate word starting with no vowel', () => {
+  it('should start with no vowel', () => {
     const normalizedWords = nonVowelStartingWords.map(normalize);
     normalizedWords.forEach(word => {
-      expect(getConsonants(word)).toStrictEqual(true);
+      const getConsonantsCheck = getConsonants(word);
+      expect(getConsonantsCheck).toBeDefined();
+      expect(typeof getConsonantsCheck).toStrictEqual('object');
     });
   });
-  
 });

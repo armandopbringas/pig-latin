@@ -12,15 +12,15 @@ const firstLetterIsVowel = word => {
 
 const getConsonants = word => {
   const wordLetters = [...word];
-  const firstConsonantLetter = wordLetters[0]; 
-  const firstLetterIsConsonant = VOWELS.includes(firstConsonantLetter);
-  const secondConsonantLetter = wordLetters[1];
-  const secondLetterIsConsonant = VOWELS.includes(secondConsonantLetter);
+  const firstLetter = wordLetters[0]; 
+  const firstLetterIsConsonant = VOWELS.includes(firstLetter);
+  const secondLetter = wordLetters[1];
+  const secondLetterIsConsonant = VOWELS.includes(secondLetter);
   return {
     wordLetters,
-    firstConsonantLetter,
+    firstLetter,
     firstLetterIsConsonant,
-    secondConsonantLetter,
+    secondLetter,
     secondLetterIsConsonant,
   };
 };
