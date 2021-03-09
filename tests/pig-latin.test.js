@@ -1,5 +1,5 @@
-const { vowels, normalize, firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
-const { vowelStartingWords, nonVowelStartingWords } = require("./utils");
+const { normalize, firstLetterIsVowel, getConsonants, pigLatin } = require('../pig-latin');
+const { vowelStartingWords, nonVowelStartingWords, wordChecks } = require("./utils");
 
 const MIXED_CASE = "mIXeD_CaSe";
 
@@ -76,15 +76,18 @@ describe('Validate word starting with no vowel', () => {
 });
 
 describe('Test pig latin function', () => {
-  const checks = [
-    { word: 'palabra', translate: 'alabrapway' },
-    { word: 'otra', translate: 'otraay' },
-    { word: 'zebra', translate: 'ebrazway' },
-  ];
-
-  checks.forEach(({ word, translate }) => {
-    expect(pigLatin(word)).toBeTruthy();
-    expect(typeof pigLatin(word)).toEqual('string')
-    expect(pigLatin(word)).toEqual(translate);
+  it('Should handle non string parameters', () => {
+    expect(() => pigLatin()).toThrow(Error);
+    expect(() => pigLatin(1000)).toThrow(Error);
+    expect(() => pigLatin({})).toThrow(Error);
   });
+
+  it('Should validate pig latin translate', () => {
+    wordChecks.forEach(({ word, translate }) => {
+      expect(pigLatin(word)).toBeTruthy();
+      expect(typeof pigLatin(word)).toEqual('string');
+      expect(pigLatin(word)).toEqual(translate);
+    });
+  });
+
 });

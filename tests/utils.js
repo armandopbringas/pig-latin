@@ -13,3 +13,9 @@ module.exports.nonVowelStartingWords = [
   "greta",
   " Gold"
 ];
+
+module.exports.wordChecks = [
+  { word: 'word', translate: 'wordway' },
+  { word: 'pig', translate: 'igpay' },
+  { word: 'dross', translate: 'ossdray' },
+];

@@ -35,8 +35,8 @@ const pigLatin = (word) => {
     secondLetterIsConsonant,
   } = consonantChecks;
 
-  const wordWithoutFirstLetter = wordLetters.splice(1);
-  const wordWithoutSecondtLetter = wordWithoutFirstLetter.splice(1);
+  const wordWithoutFirstLetter = wordLetters.slice(1);
+  const wordWithoutSecondtLetter = wordWithoutFirstLetter.slice(1);
   
   if (firstLetterIsConsonant & secondLetterIsConsonant === false) {
     return word + 'way';
