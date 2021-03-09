@@ -56,18 +56,35 @@ describe('Validate word starting with no vowel', () => {
     const normalizedWords = nonVowelStartingWords.map(normalize);
     normalizedWords.forEach(word => {
       const getConsonantsCheck = getConsonants(word);
+      expect(getConsonantsCheck).toBeTruthy();
+      expect(typeof getConsonantsCheck).toStrictEqual('object');
+
       const { 
         firstLetter,
         firstLetterIsConsonant,
         secondLetter,
         secondLetterIsConsonant,
       } = getConsonantsCheck;
-      expect(getConsonantsCheck).toBeDefined();
-      expect(typeof getConsonantsCheck).toStrictEqual('object');
-      expect(firstLetter).toBeDefined();
-      expect(firstLetterIsConsonant).toBeDefined();
-      expect(secondLetter).toBeDefined();
-      expect(secondLetterIsConsonant).toBeDefined();
+      const checkProps = [firstLetter,  firstLetterIsConsonant, secondLetter, secondLetterIsConsonant];
+      checkProps.forEach(p => expect(p).toBeDefined());
+      expect(typeof firstLetter).toEqual('string');
+      expect(typeof firstLetterIsConsonant).toEqual('boolean');
+      expect(typeof secondLetter).toEqual('string');
+      expect(typeof secondLetterIsConsonant).toEqual('boolean');
     });
+  });
+});
+
+describe('Test pig latin function', () => {
+  const checks = [
+    { word: 'palabra', translate: 'alabrapway' },
+    { word: 'otra', translate: 'otraay' },
+    { word: 'zebra', translate: 'ebrazway' },
+  ];
+
+  checks.forEach(({ word, translate }) => {
+    expect(pigLatin(word)).toBeTruthy();
+    expect(typeof pigLatin(word)).toEqual('string')
+    expect(pigLatin(word)).toEqual(translate);
   });
 });

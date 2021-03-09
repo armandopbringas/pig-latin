@@ -25,10 +25,26 @@ const getConsonants = word => {
   };
 };
 
-function pigLatin(word) {
-  if (firstConsonantLetter & secondConsonantLetter === false) {
-    return word + 'ay';
-  } 
+const pigLatin = (word) => {
+  const consonantChecks = getConsonants(word);
+  const {
+    wordLetters,
+    firstLetter,
+    firstLetterIsConsonant,
+    secondLetter,
+    secondLetterIsConsonant,
+  } = consonantChecks;
+
+  const wordWithoutFirstLetter = wordLetters.splice(1);
+  const wordWithoutSecondtLetter = wordWithoutFirstLetter.splice(1);
+  
+  if (firstLetterIsConsonant & secondLetterIsConsonant === false) {
+    return word + 'way';
+  } else if (firstLetterIsConsonant === true & secondLetterIsConsonant === false) {
+    return wordWithoutFirstLetter + firstLetter + 'ay';
+  } else if (firstLetterIsConsonant & secondLetterIsConsonant === true) {
+    return wordWithoutSecondtLetter + firstLetter + secondLetter + 'ay';
+  }
 };
 
 module.exports = {
